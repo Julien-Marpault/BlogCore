@@ -1,0 +1,103 @@
+﻿@import '../variables/variables.scss';
+
+
+.NewPost {
+    form {
+        width: 750px;
+        margin: 0 auto;
+    }
+
+    .title {
+        width: 100%;
+        font-size: 2em;
+        margin: 0;
+        border: none;
+        //border-bottom: $border-standard;
+        &:focus {
+            outline: none;
+            background: $light-gray;
+        }
+    }
+
+    .publishcontainer {
+        display: flex;
+        //font-size: 0.9em;
+        background: #fff;
+
+        .publishblock {
+            width: 50%;
+            display: flex;
+            margin-left: $tiersU;
+
+            .publishdate {
+                width: 100%;
+                margin: 0;
+                border: none;
+                color: $medium-gray;
+                margin-left: $tiersU;
+            }
+        }
+    }
+
+    .categorie {
+        width: 100%;
+        margin: 0;
+        border: none;
+        color: $medium-gray;
+        font-size: 0.9em;
+        line-height: 0.4em;
+
+        &:focus {
+            outline: none;
+            background: $light-gray;
+        }
+    }
+
+    .tags {
+        position: relative;
+        border: $border-standard;
+        height: 38px;
+        padding: $tiersU;
+
+        span {
+            margin-right: $tiersU;
+
+            &.close {
+                margin: 0 0 0 $tiersU;
+                border: none;
+                padding: 0;
+                color: rgb(96,96,96);
+                font-size: 1em;
+                cursor: pointer;
+            }
+        }
+
+        input {
+            padding-left: $tiersU;
+            border: none;
+            line-height: 22px;
+            vertical-align: middle;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .AutoCompleteTab {
+            position: absolute;
+            background: rgb(255,255,255);
+            border: $border-standard;
+            left: 0;
+            right: 0;
+            padding: $tiersU;
+
+            div {
+                cursor: pointer;
+
+                &:hover {
+                    background: $light-blue-gray;
+                }
+            }
+        }
+    }
+}

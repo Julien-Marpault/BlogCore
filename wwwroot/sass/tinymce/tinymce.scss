@@ -1,0 +1,52 @@
+﻿@import '../variables/variables.scss';
+
+.mce-content-body {
+    font-family: $main-fonts;
+    color: $dark-gray;
+    background: rgb(255,255,255);
+    //border: $border-standard;
+    padding: $twoU;
+    //margin: $oneU auto 0;
+    //width: 750px;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+
+    header {
+        time, .categorie, .time {
+            color: $medium-gray;
+            font-size: 0.9em;
+            line-height: 0.4em;
+        }
+    }
+
+    blockquote {
+        border-top: $border-standard;
+        border-bottom: $border-standard;
+        margin-top: $oneU;
+        margin-bottom: $oneU;
+        padding: $oneU;
+        font-size: 1.5em;
+        color: $medium-gray;
+        font-weight: lighter;
+    }
+
+    footer {
+        border-top: $border-standard;
+        padding: $oneU 0;
+
+        section {
+            &.tags {
+                span {
+                    padding: $tiersU;
+                    background: $light-gray;
+                    border: $border-standard;
+                    font-size: 0.6em;
+
+                    a, a:active, a:visited {
+                        color: $dark-gray;
+                    }
+                }
+            }
+        }
+    }
+}

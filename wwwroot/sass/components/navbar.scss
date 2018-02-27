@@ -1,0 +1,89 @@
+﻿
+@import '../variables/variables.scss';
+
+nav {
+    background-color: $navbar-background-color;
+    padding: $oneU;
+    font-weight: 400;
+
+    .brand {
+        margin: 0 $oneU;
+        line-height: 23px;
+        font-size: 20px;
+        text-transform: uppercase;
+        vertical-align: -webkit-baseline-middle;
+    }
+
+    .searchbar, .menu {
+        display: inline-flex;
+    }
+
+    .searchbar {
+        vertical-align: -webkit-baseline-middle;
+
+        input[type=search] {
+            height: 36px;
+            background: $navbar-font-color;
+            color: $navbar-background-color;
+            outline: none;
+            border: none;
+            width: 300px;
+            padding-right: 45px;
+            padding-left: $oneU;
+        }
+
+        .search-icon {
+            color: $navbar-background-color;
+            margin: 5px 15px 0 -32px;
+            font-size: 26px;
+        }
+    }
+
+    .loginpartial {
+        float: right;
+
+        ul {
+            li {
+                display: inline-flex;
+                padding: $tiersU $oneU;
+            }
+        }
+
+        button {
+            background: $navbar-font-color;
+            color: $navbar-background-color;
+            border: none;
+            padding: $tiersU;
+        }
+    }
+
+    &, a {
+        color: $navbar-font-color;
+
+        .nav-item {
+            display: block;
+            margin: 0 $oneU;
+
+            &.active {
+                color: rgb(255,255,255);
+            }
+
+            .nav-item-icon {
+                display: block;
+                font-size: 1.25em;
+                text-align: center;
+            }
+
+            .nav-item-title {
+                display: block;
+                text-align: center;
+                font-size: 0.75em;
+            }
+        }
+    }
+
+    a:hover {
+        color: rgb(255,255,255);
+        transition: color 0.3s;
+    }
+}

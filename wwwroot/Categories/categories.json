@@ -1,0 +1,22 @@
+﻿[
+  {
+    "Id": "aspnetcore",
+    "Name": "ASP.Net Core"
+  },
+  {
+    "Id": "csharp",
+    "Name": "C#"
+  },
+  {
+    "Id": "javascript",
+    "Name": "JavaScript"
+  },
+  {
+    "Id": "ecommerce",
+    "Name": "E-commerce"
+  },
+  {
+    "Id": "marketing",
+    "Name": "Marketing"
+  }
+]

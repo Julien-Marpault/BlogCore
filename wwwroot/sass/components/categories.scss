@@ -1,0 +1,35 @@
+﻿@import '../variables/variables.scss';
+
+.categories {
+    background: rgb(255,255,255);
+    border: $border-standard;
+    padding: $twoU;
+    margin: $oneU auto 0;
+    width: 750px;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+
+    .category {
+        padding: $tiersU;
+        position: relative;
+
+        h2 {
+            font-size: 1em;
+            margin: 0;
+            display: inline-flex;
+        }
+
+        .count {
+            font-size: 0.8em;
+            position: absolute;
+            bottom: $tiersU;
+            right: $tiersU;
+        }
+
+        hr {
+            margin: 0;
+            border: none;
+            border-top: $border-standard;
+        }
+    }
+}

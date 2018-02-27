@@ -1,0 +1,45 @@
+﻿
+@import '../variables/variables.scss';
+
+body {
+    & > footer {
+        background-color: $footer-background-color;
+        padding: $oneU;
+        text-align: center;
+        margin-top: $twoU;
+        font-size: 0.9em;
+
+        li {
+            display: inline;
+            padding: $oneU $tiersU;
+            line-height: 24px;
+            vertical-align: top;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: $navbar-font-color;
+
+            &:hover {
+                fill: rgb(255,255,255);
+                transition: fill 0.3s;
+            }
+        }
+
+        &, a {
+            color: $navbar-font-color;
+
+
+            &.active {
+                color: rgb(255,255,255);
+            }
+        }
+
+
+        a:hover {
+            color: rgb(255,255,255);
+            transition: color 0.3s;
+        }
+    }
+}

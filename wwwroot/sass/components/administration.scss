@@ -1,0 +1,105 @@
+﻿
+@import '../variables/variables.scss';
+
+.AdministrationView {
+    .left {
+        float: left;
+        width: calc(50% - 500px);
+        vertical-align: top;
+
+        .menu {
+            background: rgb(255,255,255);
+            border: $border-standard;
+            padding: $twoU;
+            margin: 0 $oneU 0 0;
+            width: 100%;
+            line-height: 1.45;
+            letter-spacing: 0.02em;
+            float: right;
+        }
+    }
+
+    .main {
+        //vertical-align: top;
+        //display: inline-flex;
+        background: rgb(255,255,255);
+        border: $border-standard;
+        padding: $twoU;
+        margin: $twoU auto;
+        width: 1000px;
+        line-height: 1.45;
+        letter-spacing: 0.02em;
+        vertical-align: top;
+        //margin-right: calc(50% - 375px);
+        //margin-left: calc(50% - 375px - 200px);
+        nav {
+            margin: -30px -30px 0 -30px;
+            text-align: right;
+            padding: $tiersU;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            font-size: 1em;
+        }
+
+        .Post {
+            padding: $tiersU;
+            border-bottom: $border-standard;
+            display: flex;
+            font-size: 0.9em;
+            cursor: pointer;
+
+            &:hover {
+                background: $light-blue-gray;
+            }
+
+            .Title {
+                width: calc(100% - 200px);
+            }
+
+            .PublishDate {
+                width: 100px;
+            }
+
+            .IsPublished {
+                width: 30px;
+            }
+
+            .IsPublished, .Delete, .Edit {
+                text-align: center;
+                color: rgb(128,128,128);
+                width: 30px;
+
+                &.off {
+                    color: rgb(200,200,200);
+
+                    a {
+                        color: rgb(200,200,200);
+                    }
+                }
+
+                a {
+                    color: rgb(128,128,128);
+                }
+            }
+        }
+    }
+
+    .right {
+        float: right;
+        width: calc(50% - 500px);
+        vertical-align: top;
+
+        .content {
+            background: rgb(255,255,255);
+            border: $border-standard;
+            padding: $twoU;
+            margin: 0 0 0 $oneU;
+            width: 100%;
+            line-height: 1.45;
+            letter-spacing: 0.02em;
+            float: left;
+        }
+    }
+}

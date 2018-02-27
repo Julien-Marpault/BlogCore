@@ -1,0 +1,34 @@
+﻿
+//base colors
+$dark-blue-gray: #283e4a;
+$medium-blue-gray: lighten( $dark-blue-gray, 10% );
+$light-blue-gray: #c7d1d8;
+$light-gray: rgb(245,245,245);
+$medium-light-gray: rgb(192,192,192);
+$medium-gray: rgb(128,128,128);
+$dark-gray: rgb(32,32,32);
+
+//layout
+$tiersU: 5px;
+$oneU: 15px;
+$twoU: 30px;
+
+//borders
+$border-standard: 1px solid $medium-light-gray;
+
+//fonts
+//$main-fonts: Source Sans Pro,Helvetica,Arial,sans-serif,Hiragino Kaku Gothic Pro,Meiryo,Hiragino Sans GB W3,Noto Naskh Arabic,Droid Arabic Naskh,Geeza Pro,Simplified Arabic,Noto Sans Thai,Thonburi,Dokchampa,Droid Sans Thai,Droid Sans Fallback,-apple-system,'.SFNSDisplay-Regular',Heiti SC,Microsoft Yahei,Segoe UI;
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url(/fonts/CenturyGothicRegular.ttf);
+}
+
+$main-fonts: 'Century Gothic',Helvetica,sans-serif,arial;
+// navbar
+$navbar-background-color: $dark-blue-gray;
+$navbar-font-color: $light-blue-gray;
+
+// footer
+$footer-background-color: $dark-blue-gray;
+$footer-font-color: $light-blue-gray;

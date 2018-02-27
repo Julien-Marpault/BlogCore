@@ -1,0 +1,44 @@
+﻿@import '../lib/normalize-css/normalize.css';
+
+@import 'variables/variables.scss';
+@import 'components/navbar.scss';
+@import 'components/container.scss';
+@import 'components/article.scss';
+@import 'components/footer.scss';
+@import 'components/categories.scss';
+@import 'components/login.scss';
+@import 'components/administration.scss';
+@import 'components/newpost.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: $main-fonts;
+    color: $dark-gray;
+    background-color: $light-gray;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.validation-error {
+    border-color: rgb(192,0,0);
+    box-shadow: 0 0 10px rgb(192,0,0);
+    //outline: 3px solid rgb(192,0,0);
+    //color: rgb(192,0,0);
+    //font-weight: bold;
+}
+
+@import '../css/prism.css';

@@ -1,0 +1,50 @@
+﻿@import '../variables/variables.scss';
+
+.login {
+    background: rgb(255,255,255);
+    border: $border-standard;
+    padding: $twoU;
+    margin: $oneU auto 0;
+    width: 750px;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+
+    .form-group {
+        padding: $tiersU 0;
+
+        label {
+            width: 150px;
+            display: inline-block;
+        }
+
+        .form-control {
+            width: 400px;
+            border: none;
+            border-bottom: $border-standard;
+
+            &:focus {
+                outline: none;
+                background: $light-gray;
+            }
+        }
+    }
+}
+
+.button-group {
+    text-align: right;
+    padding: $oneU 0 0 0;
+
+    button {
+        padding: $tiersU;
+        color: $navbar-font-color;
+        background: $navbar-background-color;
+        border: none;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(255,255,255);
+            transition: color 0.3s;
+        }
+    }
+}
