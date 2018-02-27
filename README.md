@@ -4,7 +4,7 @@ LightWeight blog engine based on .Net Core 2
 Actually BlogCore is still in bete version.
 Some improvements will come very soon.
 
-#Libs
+# Libs
 BlogCore uses some libraries to work
 timyMCE
 normalize-css
