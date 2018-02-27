@@ -1,0 +1,17 @@
+﻿@using BlogCore.Data
+
+@inject IDal _dal;
+@model List<Category>
+
+<div class="categories">
+    @foreach (Category c in Model)
+    {
+        int _postCount = _dal.PostCount(c.Id);
+        <div class="category">
+            <a asp-area="" asp-controller="Categories" asp-action="Index" asp-route-id="@c.Id">
+                <h2>@c.Name</h2><span class="count">@_postCount article@(_postCount > 1 ? "s" : "")</span>
+                <hr />
+            </a>
+        </div>
+    }
+</div>

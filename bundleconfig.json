@@ -1,0 +1,19 @@
+[
+  {
+    "outputFileName": "wwwroot/css/blogcore.min.css",
+    "inputFiles": [
+      "wwwroot/css/blogcore.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/blogcore.min.js",
+    "inputFiles": [
+      "wwwroot/js/validation.js",
+      "wwwroot/js/posts.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+]

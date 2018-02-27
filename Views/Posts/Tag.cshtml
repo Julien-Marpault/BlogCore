@@ -1,0 +1,12 @@
+﻿@model List<Post>
+
+@{
+    ViewData["Title"] = "Articles about " + ViewData["tag"];
+}
+
+<h2>@ViewData["tag"]</h2>
+
+@foreach (Post p in Model)
+{
+    await Html.RenderPartialAsync("~/Views/Posts/Post.cshtml", p);
+}

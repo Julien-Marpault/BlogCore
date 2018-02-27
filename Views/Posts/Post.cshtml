@@ -1,0 +1,33 @@
+﻿@using System.Net
+@model Post
+
+<article>
+    <header>
+        <h1>@Model.Title</h1>
+        @if (Model.RevisionDate.HasValue)
+        {
+            <div class="time">Initially published @Model.PublishDate.ToString("dd/MM/yyyy")</div>
+            <time datetime="@Model.RevisionDate.Value">Updated on: @Model.RevisionDate.Value.ToString("dd/MM/yyyy")</time>
+        }
+        else
+        {
+            <time datetime="@Model.PublishDate">Published @Model.PublishDate.ToString("dd/MM/yyyy")</time>
+        }
+
+        <div class="categorie">in @Model.Category?.Name</div>
+    </header>
+    <div class="body">
+        @Html.Raw(Model.Content)
+    </div>
+    <footer>
+        <section class="tags">
+            @if (Model.Tags != null && Model.Tags.Count > 0)
+            {
+                foreach (string tag in Model.Tags)
+                {
+                    <span><a asp-area="" asp-controller="Posts" asp-action="Tag" asp-route-tag="@tag.Conform()">@tag</a></span>
+                }
+            }
+        </section>
+    </footer>
+</article>

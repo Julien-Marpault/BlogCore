@@ -1,0 +1,60 @@
+﻿@model ManageViewModel
+
+@{
+    ViewData["Title"] = "Administration";
+}
+
+<nav>
+    <span class="menu">
+        <a asp-area="" asp-controller="Manage" asp-action="NewPost">
+            <span class="nav-item">
+                <span class="nav-item-icon"><i class="fas fa-newspaper"></i></span>
+                <span class="nav-item-title">New Post</span>
+            </span>
+        </a>
+    </span>
+</nav>
+
+<div class="PostList">
+    <h2>Posts</h2>
+    <hr />
+
+    @foreach (Dictionary<string, string> post in Model.Posts)
+    {
+        <div class="Post" id="@post["Id"]" draggable="true" dropzone="true">
+            <div class="Title">@post["Title"]</div>
+            <div class="PublishDate">@post["PublishDate"]</div>
+            <div class="IsPublished @(post["IsPublished"] == "False" ? "off" : "")">
+                <a asp-area="" asp-controller="Posts" asp-action="ToggleOnline" asp-route-id="@post["Id"]">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+            <div class="Edit">
+                <a asp-area="" asp-controller="Posts" asp-action="Edit" asp-route-id="@post["Id"]">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+            </div>
+            @* TODO: Add Delete
+                    <div class="Delete">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            *@
+        </div>
+    }
+</div>
+
+@*
+    <script>
+        let posts = document.getElementsByClassName('Post');
+        if (posts !== undefined && posts !== null && posts.length > 0) {
+            for (let i = 0; i < posts.length; i++) {
+                let post = posts[i];
+                post.getElementsByClassName('Edit')[0].addEventListener('click', function (e) { EditPost(e); });
+            }
+        }
+
+        function EditPost(e) {
+        }
+
+    </script>
+*@

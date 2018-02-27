@@ -1,0 +1,12 @@
+C:\Team Foundation Workspace\BlogCore\bin\Debug\netcoreapp2.0\BlogCore.deps.json
+C:\Team Foundation Workspace\BlogCore\bin\Debug\netcoreapp2.0\BlogCore.runtimeconfig.json
+C:\Team Foundation Workspace\BlogCore\bin\Debug\netcoreapp2.0\BlogCore.runtimeconfig.dev.json
+C:\Team Foundation Workspace\BlogCore\bin\Debug\netcoreapp2.0\BlogCore.dll
+C:\Team Foundation Workspace\BlogCore\bin\Debug\netcoreapp2.0\BlogCore.pdb
+C:\Team Foundation Workspace\BlogCore\obj\Debug\netcoreapp2.0\BlogCore.csprojResolveAssemblyReference.cache
+C:\Team Foundation Workspace\BlogCore\obj\Debug\netcoreapp2.0\BlogCore.csproj.CoreCompileInputs.cache
+C:\Team Foundation Workspace\BlogCore\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Team Foundation Workspace\BlogCore\obj\Debug\netcoreapp2.0\BlogCore.AssemblyInfoInputs.cache
+C:\Team Foundation Workspace\BlogCore\obj\Debug\netcoreapp2.0\BlogCore.AssemblyInfo.cs
+C:\Team Foundation Workspace\BlogCore\obj\Debug\netcoreapp2.0\BlogCore.dll
+C:\Team Foundation Workspace\BlogCore\obj\Debug\netcoreapp2.0\BlogCore.pdb

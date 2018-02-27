@@ -1,0 +1,7 @@
+﻿@using System.Net
+@model List<Post>
+
+@foreach (Post p in Model)
+{
+    await Html.RenderPartialAsync("~/Views/Posts/Post.cshtml",p);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "tinymce": "4.7.6",
+    "normalize-css": "7.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+﻿@model Post
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Model != null)
+{
+    await Html.RenderPartialAsync("~/Views/Posts/Post.cshtml", Model);
+}
+

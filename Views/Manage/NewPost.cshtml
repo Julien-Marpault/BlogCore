@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using System.Security.Cryptography
+@using System.IO
+@using System.Text
+
+
+@inject IHostingEnvironment hostingEnvironment
+@model EditPostViewModel
+@{
+    string version = string.Empty;
+    MD5 md5 = MD5.Create();
+
+    using (var stream = File.OpenRead(hostingEnvironment.WebRootPath + "/css/tinymce/tinymce.min.css"))
+    {
+        version = Convert.ToBase64String(md5.ComputeHash(stream)).TrimEnd('=');
+    }
+
+}
+<div class="NewPost">
+    <form asp-area="" asp-controller="Manage" asp-action="NewPost" method="post">
+        <input type="hidden" asp-for="Id" value="0" />
+        <input type="hidden" asp-for="PublishDate" />
+        <input asp-for="Title" class="title" placeholder="Titre" />
+        @Html.DropDownListFor(m => m.CategoryId, Model.Categories, "Catégorie", new { @class = "categorie" })
+<textarea asp-for="Content" id="PostContent"></textarea>
+        <div class="tags" id="tags">
+            <input id="TagSelector" type="text" placeholder="Add tag here" />
+            <div id="AutoCompleteTab" class="AutoCompleteTab" style="display:none"></div>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="btn btn-default">Save</button>
+        </div>
+    </form>
+</div>
+@section Scripts{
+    <script src="~/lib/tinymce/tinymce.min.js" asp-append-version="true"></script>
+    <script>
+    tinymce.init({
+        selector: '#PostContent',
+        theme: 'modern',
+        width: 748,
+        height: 500,
+        content_css: '/css/tinymce/tinymce.min.css?v=@(version)',
+        plugins: "codesample",
+        codesample_content_css: '/css/prism.css'
+        });
+        let tagCount = 0;
+    </script>
+}

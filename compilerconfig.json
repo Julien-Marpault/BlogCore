@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/blogcore.css",
+    "inputFile": "wwwroot/sass/blogcore.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/tinymce/tinymce.css",
+    "inputFile": "wwwroot/sass/tinymce/tinymce.scss"
+  }
+]

@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/blogcore.css" asp-append-version="true" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="~/css/blogcore.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <nav>
+        <span class="brand">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Julien Marpault</a>
+        </span>
+        <span class="searchbar">
+            <input type="search" />
+            <span class="search-icon">
+                <i class="fas fa-search"></i>
+            </span>
+        </span>
+        <span class="menu">
+            <a asp-area="" asp-controller="Home" asp-action="Posts">
+                <span class="nav-item">
+                    <span class="nav-item-icon"><i class="fas fa-newspaper"></i></span><span class="nav-item-title">Posts</span>
+                </span>
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Categories">
+                <span class="nav-item">
+                    <span class="nav-item-icon"><i class="fas fa-th-large"></i></span><span class="nav-item-title">Categories</span>
+                </span>
+            </a>
+            @*<a asp-area="" asp-controller="Home" asp-action="Tags">
+                    <span class="nav-item">
+                        <span class="nav-item-icon"><i class="fas fa-tags"></i></span><span class="nav-item-title">Tags</span>
+                    </span>
+                </a>*@
+        </span>
+        <span class="loginpartial menu">
+            @await Html.PartialAsync("_LoginPartial")
+        </span>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer>
+        <ul>
+            <li>
+                &copy; 2018 - BlogCore
+            </li>
+            <li>
+                Follow me:
+            </li>
+            @* FACEBOOK
+                    <li>
+                    <a href="#">
+                        <svg role="img" aria-labelledby="_fb">
+                            <title id="_fb">Share on Facebook</title>
+                            <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            *@
+            @* TWITTER
+                    <li>
+                    <a href="#">
+                        <svg role="img" aria-labelledby="_tw">
+                            <title id="_tw">Share on Twitter</title>
+                            <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            *@
+            @* GOOGLE+
+                    <li>
+                    <a href="#">
+                        <svg role="img" aria-labelledby="_gp">
+                            <title id="_gp">Share on Google+</title>
+                            <path d="M7.635 10.909v2.619h4.335c-.173 1.125-1.31 3.295-4.331 3.295-2.604 0-4.731-2.16-4.731-4.823 0-2.662 2.122-4.822 4.728-4.822 1.485 0 2.479.633 3.045 1.178l2.073-1.994c-1.33-1.245-3.056-1.995-5.115-1.995C3.412 4.365 0 7.785 0 12s3.414 7.635 7.635 7.635c4.41 0 7.332-3.098 7.332-7.461 0-.501-.054-.885-.12-1.265H7.635zm16.365 0h-2.183V8.726h-2.183v2.183h-2.182v2.181h2.184v2.184h2.189V13.09H24">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            *@
+            <li>
+                <a href="#">
+                    <svg role="img" aria-labelledby="_em">
+                        <title id="_em">Email</title>
+                        <path d="M24 7.387v10.478c0 .23-.08.424-.238.576-.158.154-.352.23-.58.23h-8.547v-6.959l1.6 1.229c.102.085.229.126.379.126.148 0 .277-.041.389-.127L24 7.387zm-9.365-2.021h8.547c.211 0 .393.063.543.192.15.128.234.3.248.51l-7.369 5.876-1.969-1.549V5.366zM13.404.864v22.271L0 20.819V3.244L13.406.864h-.002zm-4.049 11.18c-.02-1.133-.313-2.072-.879-2.814-.555-.74-1.275-1.131-2.131-1.164-.824.033-1.529.423-2.1 1.164-.57.742-.855 1.682-.87 2.814.015 1.117.315 2.047.885 2.791.571.74 1.274 1.133 2.101 1.176.855-.035 1.574-.424 2.145-1.17.57-.748.87-1.68.885-2.797h-.036zm-3.12-2.482c.431.02.794.256 1.083.717.285.461.435 1.045.435 1.752 0 .721-.149 1.307-.435 1.771-.301.464-.66.704-1.096.704s-.795-.226-1.095-.69-.435-1.05-.435-1.754c0-.705.135-1.291.435-1.74.284-.45.646-.69 1.081-.721l.027-.039z">
+                        </path>
+                    </svg>
+                </a>
+            </li>
+            @* INSTAGRAM
+                    <li>
+                    <a href="#">
+                        <svg role="img" aria-labelledby="_em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <title id="_em">Instagram</title>
+                            <path d="M256,49.471c67.266,0,75.233.257,101.8,1.469,24.562,1.121,37.9,5.224,46.778,8.674a78.052,78.052,0,0,1,28.966,18.845,78.052,78.052,0,0,1,18.845,28.966c3.45,8.877,7.554,22.216,8.674,46.778,1.212,26.565,1.469,34.532,1.469,101.8s-0.257,75.233-1.469,101.8c-1.121,24.562-5.225,37.9-8.674,46.778a83.427,83.427,0,0,1-47.811,47.811c-8.877,3.45-22.216,7.554-46.778,8.674-26.56,1.212-34.527,1.469-101.8,1.469s-75.237-.257-101.8-1.469c-24.562-1.121-37.9-5.225-46.778-8.674a78.051,78.051,0,0,1-28.966-18.845,78.053,78.053,0,0,1-18.845-28.966c-3.45-8.877-7.554-22.216-8.674-46.778-1.212-26.564-1.469-34.532-1.469-101.8s0.257-75.233,1.469-101.8c1.121-24.562,5.224-37.9,8.674-46.778A78.052,78.052,0,0,1,78.458,78.458a78.053,78.053,0,0,1,28.966-18.845c8.877-3.45,22.216-7.554,46.778-8.674,26.565-1.212,34.532-1.469,101.8-1.469m0-45.391c-68.418,0-77,.29-103.866,1.516-26.815,1.224-45.127,5.482-61.151,11.71a123.488,123.488,0,0,0-44.62,29.057A123.488,123.488,0,0,0,17.3,90.982C11.077,107.007,6.819,125.319,5.6,152.134,4.369,179,4.079,187.582,4.079,256S4.369,333,5.6,359.866c1.224,26.815,5.482,45.127,11.71,61.151a123.489,123.489,0,0,0,29.057,44.62,123.486,123.486,0,0,0,44.62,29.057c16.025,6.228,34.337,10.486,61.151,11.71,26.87,1.226,35.449,1.516,103.866,1.516s77-.29,103.866-1.516c26.815-1.224,45.127-5.482,61.151-11.71a128.817,128.817,0,0,0,73.677-73.677c6.228-16.025,10.486-34.337,11.71-61.151,1.226-26.87,1.516-35.449,1.516-103.866s-0.29-77-1.516-103.866c-1.224-26.815-5.482-45.127-11.71-61.151a123.486,123.486,0,0,0-29.057-44.62A123.487,123.487,0,0,0,421.018,17.3C404.993,11.077,386.681,6.819,359.866,5.6,333,4.369,324.418,4.079,256,4.079h0Z" />
+                            <path d="M256,126.635A129.365,129.365,0,1,0,385.365,256,129.365,129.365,0,0,0,256,126.635Zm0,213.338A83.973,83.973,0,1,1,339.974,256,83.974,83.974,0,0,1,256,339.973Z" />
+                            <circle cx="390.476" cy="121.524" r="30.23" />
+                        </svg>
+                    </a>
+                </li>
+            *@
+            <li>
+                <a href="https://github.com/JulienM28" rel="me">
+                    <svg role="img" aria-labelledby="_em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                        <title id="_em">GiHub</title>
+                        <path d="M512 0C229.25 0 0 229.25 0 512c0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312C242 908.812 211.906 817.5 211.906 817.5c-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375C304.906 725.438 185.344 681.5 185.344 485.312c0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562C877.438 930 1024 738.125 1024 512 1024 229.25 794.75 0 512 0z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/julien-marpault/" rel="me">
+                    <svg role="img" aria-labelledby="_em" xmlns="http://www.w3.org/2000/svg" viewBox="10 10 30 30">
+                        <title id="_em">LinkedIn</title>
+                        <path d="M36.1 12H13.9c-1.1 0-1.9.8-1.9 1.9v22.2c0 1 .9 1.9 1.9 1.9h22.2c1.1 0 1.9-.8 1.9-1.9V13.9c0-1.1-.9-1.9-1.9-1.9zM20 34h-4V22h4v12zm-2-13.6c-1.3 0-2.4-1.1-2.4-2.4 0-1.3 1.1-2.4 2.4-2.4 1.3 0 2.4 1.1 2.4 2.4 0 1.3-1.1 2.4-2.4 2.4zM34 34h-4v-6c0-1.6-.4-3.2-2-3.2s-2 1.6-2 3.2v6h-4V22h4v1.4h.2c.5-1 1.8-1.8 3.3-1.8 3.7 0 4.5 2.4 4.5 5.4v7z">
+
+                        </path>
+                    </svg>
+
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">
+                    Powered by BlogCore
+                </a>
+            </li>
+        </ul>
+    </footer>
+    @*    <nav class="navbar  navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">BlogCore</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; 2018 - BlogCore</p>
+            </footer>
+        </div>*@
+
+    <environment include="Development">
+        <script src="~/lib/fontawesome-5-0-2/svg-with-js/js/fontawesome-all.min.js" asp-append-version="true" defer async></script>
+        <script src="~/js/validation.js" asp-append-version="true" defer async></script>
+        <script src="~/js/prism.js" asp-append-version="true" defer async></script>
+        <script src="~/js/posts.js" asp-append-version="true" defer async></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/fontawesome-5-0-2/svg-with-js/js/fontawesome-all.min.js" asp-append-version="true" defer async></script>
+        <script src="~/js/prism.js" asp-append-version="true" defer async></script>
+        <script src="~/js/blogcore.min.js" asp-append-version="true" defer async></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
