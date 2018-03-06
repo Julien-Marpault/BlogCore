@@ -12,6 +12,8 @@ using System.Net;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Authorization;
 using System.Reflection;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
 namespace BlogCore.Controllers
 {
@@ -85,6 +87,56 @@ namespace BlogCore.Controllers
             //TODO: Handle tag and category modification for Dal
             await _dal.UpdateAsync(p);
             return RedirectToAction("Index", "Manage");
+        }
+
+        //[Authorize]
+        //[ValidateAntiForgeryToken]
+        [HttpPost("/post/order")]
+        public async Task<IActionResult> Order(IFormCollection collection)
+        {
+            collection.TryGetValue("id", out StringValues id);
+            collection.TryGetValue("insert", out StringValues insert);
+            collection.TryGetValue("target", out StringValues target);
+
+            Post p = await _dal.GetPostByIdAsync(id);
+            Post t = await _dal.GetPostByIdAsync(target);
+            if (p == null || t == null) return new NotFoundResult();
+            if (insert == "before")
+            {
+                int targetOrder = t.Order;
+                p.Order = targetOrder + 1;
+                foreach (Post _p in await _dal.PostsToListAsync(false))
+                {
+                    if (_p.Order >= p.Order)
+                    {
+                        _p.Order = _p.Order + 1;
+                        await _dal.UpdateAsync(_p);
+                    }
+                }
+                await _dal.UpdateAsync(p);
+                return Content("0");
+            }
+            else if (insert == "after")
+            {
+                int targetOrder = t.Order;
+                p.Order = targetOrder;
+                t.Order = t.Order + 1;
+                foreach (Post _p in await _dal.PostsToListAsync(false))
+                {
+                    if (_p.Order >= t.Order)
+                    {
+                        _p.Order = _p.Order + 1;
+                        await _dal.UpdateAsync(_p);
+                    }
+                }
+                await _dal.UpdateAsync(p);
+                await _dal.UpdateAsync(t);
+                return Content("0");
+            }
+            else
+            {
+                return new NotFoundResult();
+            }
         }
 
         [Authorize]

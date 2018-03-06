@@ -257,10 +257,10 @@ namespace BlogCore.Data
                       .OrderByDescending(o => o.Order)
                       .Select(s => new Dictionary<string, string>
                       {
-                          { "Id",s.Id},
-                    { "Title",s.Title},
-                    {"PublishDate",s.PublishDate.ToShortDateString() },
-                    {"IsPublished",s.IsPublished.ToString() }
+                        { "Id",s.Id},
+                        { "Title",s.Title},
+                        {"PublishDate",s.PublishDate.ToShortDateString() },
+                        {"IsPublished",s.IsPublished.ToString() }
                       })
                       .ToList()
                 };

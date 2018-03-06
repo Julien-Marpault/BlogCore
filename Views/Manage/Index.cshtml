@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Administration";
 }
-
+@Html.AntiForgeryToken()
 <nav>
     <span class="menu">
         <a asp-area="" asp-controller="Manage" asp-action="NewPost">
@@ -21,7 +21,7 @@
 
     @foreach (Dictionary<string, string> post in Model.Posts)
     {
-        <div class="Post" id="@post["Id"]" draggable="true" dropzone="true">
+        <div class="Post" id="@post["Id"]" draggable="true">
             <div class="Title">@post["Title"]</div>
             <div class="PublishDate">@post["PublishDate"]</div>
             <div class="IsPublished @(post["IsPublished"] == "False" ? "off" : "")">

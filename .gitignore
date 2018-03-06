@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+/wwwroot/lib
+/wwwroot/Posts
+/BuildProcessTemplates
